@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { fetchComments } from '../../slices/commentsSlice/actionCreators';
 import { fetchPost } from '../../slices/postSlice/actionCreators';
 import { Comment } from '../../components/Comment/Comment';
+import { CommentForm } from '../../components/CommentForm/CommentForm';
 
 function Post() {
   const { id } = useParams();
@@ -20,19 +21,23 @@ function Post() {
   if (postError) {
     return <p>{postError}</p>
   }
+
   return (
-    <div>
+    <div className='Post'>
       <div>
         {postLoading && <h2>Loading...</h2>}
         
         {post && <PostItem post={post.post} user={post.user}/>}
       </div>
       <div>
+        <CommentForm />
+      </div>
+      <div>
       {commentsLoading && <h2>Loading...</h2>}
       {commentsError ? 
         <p>{commentsError}</p> 
         : 
-        comments.map((comment) => <Comment comment={comment}/>)
+        comments.map((comment) => <Comment key={comment.id} comment={comment}/>)
       }
       </div>
     </div>

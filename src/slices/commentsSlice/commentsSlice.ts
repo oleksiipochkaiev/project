@@ -14,7 +14,7 @@ const initialState: PostState = {
 }
 
 export const commentsSlice = createSlice({
-  name: 'post',
+  name: 'comments',
   initialState,
   reducers: {
     commentsFetching(state) {
@@ -30,6 +30,18 @@ export const commentsSlice = createSlice({
     commentsFetchingError(state,action: PayloadAction<string>) {
       state.isLoading = false;
       state.error = action.payload
+    },
+
+    commentAdd(state, action) {
+      state.isLoading = false;
+      state.error = '';
+      state.comments = [action.payload , ...state.comments];
+    },
+
+    deleteComment(state, action) {
+      state.isLoading = false;
+      state.error = '';
+      state.comments = state.comments.filter((comment) => comment.id !== action.payload);
     },
   }
 })
