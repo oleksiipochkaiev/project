@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router';
 import PostItem from '../../components/PostItem/PostItem';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
@@ -6,8 +6,13 @@ import { fetchComments } from '../../slices/commentsSlice/actionCreators';
 import { fetchPost } from '../../slices/postSlice/actionCreators';
 import { Comment } from '../../components/Comment/Comment';
 import { CommentForm } from '../../components/CommentForm/CommentForm';
+import Layout from '../../layout/Layout';
+import '../../styles/container.css'
+import './Post.css'
+import '../../styles/button.css'
 
 function Post() {
+  const [ formVisible, setFormVisible ] = useState<boolean>(false);
   const { id } = useParams();
   const dispatch = useAppDispatch()
   const { post, isLoading: postLoading, error: postError } = useAppSelector(state => state.postReducer)
@@ -23,24 +28,27 @@ function Post() {
   }
 
   return (
-    <div className='Post'>
-      <div>
-        {postLoading && <h2>Loading...</h2>}
-        
-        {post && <PostItem post={post.post} user={post.user}/>}
+    <Layout>
+      <div className="post">
+          <div>
+            {postLoading && <h2>Loading...</h2>}
+            
+            {post && <PostItem post={post.post} user={post.user}/>}
+          </div>
+            <div className='post__form-wrapper'>
+              {!formVisible && <button className="button button__margin-left" onClick={() => setFormVisible(true)}>New comment</button>}
+              {formVisible && <CommentForm setFormVisible={setFormVisible}/>}
+            </div>
+          <div>
+          {commentsLoading && <h2>Loading...</h2>}
+          {commentsError ? 
+            <p>{commentsError}</p> 
+            :
+            comments.map((comment) => <Comment key={comment.id} comment={comment}/>)
+          }
+          </div>
       </div>
-      <div>
-        <CommentForm />
-      </div>
-      <div>
-      {commentsLoading && <h2>Loading...</h2>}
-      {commentsError ? 
-        <p>{commentsError}</p> 
-        : 
-        comments.map((comment) => <Comment key={comment.id} comment={comment}/>)
-      }
-      </div>
-    </div>
+    </Layout>
   )
 }
 

@@ -34,7 +34,7 @@ export const postComment = (id: string, name: string, email: string, text: strin
 export const deleteComment = (id: number) => async (dispatch: AppDispatch) => {
   try {
     dispatch(commentsSlice.actions.commentsFetching())
-    const response = await axios.delete<IComment>(`https://jsonplaceholder.typicode.com/comments?id=${id}`)
+    const response = await axios.delete<IComment>(`https://jsonplaceholder.typicode.com/comments/${id}`)
     dispatch(commentsSlice.actions.deleteComment(Number(id)))
   } catch (e) {
     dispatch(commentsSlice.actions.commentsFetchingError((e as Error).message))

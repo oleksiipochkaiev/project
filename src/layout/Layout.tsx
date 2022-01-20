@@ -5,19 +5,20 @@ import './Layout.css';
 function Layout({children}: any) {
   return (
     <>
-      <header className="header">
-        <a href="/">
+      <header className="header header__container">
+        <a href="/" className="header__logo">
           <Logo />
         </a>
       </header>
+      <div className="banner"></div>
 
       {children}
       
-      <footer className="footer">
-        <a href="/">
+      <footer className="footer container">
+        <a href="/" className="footer__logo">
           <Logo />
         </a>
-        <p>&copy;Warner Developers Programs 2022. All right reserved</p>
+        <p className="footer__text">&copy;Warner Developers Programs 2022. All right reserved</p>
       </footer>
     </>
   )

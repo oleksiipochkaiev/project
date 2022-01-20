@@ -3,8 +3,14 @@ import { useParams } from 'react-router';
 import { useAppDispatch } from '../../hooks/hooks';
 import { postComment } from '../../slices/commentsSlice/actionCreators';
 import { emailRegExp } from '../../tools/emailRegExp';
+import './CommentForm.css'
+import '../../styles/button.css'
 
-export const CommentForm: React.FC = () => {
+type Props = {
+  setFormVisible: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export const CommentForm: React.FC<Props> = ({ setFormVisible }) => {
   const [name, setName] = useState<string>('')
   const [email, setEmail] = useState<string>('')
   const [text, setText] = useState<string>('')
@@ -78,12 +84,28 @@ export const CommentForm: React.FC = () => {
 
   const addComment = () => {
     dispatch(postComment(id!, name, email, text))
+    setName('')
+    setEmail('')
+    setText('')
+    setNameDirty(false)
+    setNameError('Name cannot be empty')
+    setEmailDirty(false)
+    setEmailError('Email cannot be empty')
+    setTextDirty(false)
+    setTextError('Text cannot be empty')
+    setFormValid(false)
+    setFormVisible(false)
   }
 
   return (
-    <form action="GET" onSubmit={(e) => e.preventDefault()}>
+    <form 
+      action="GET"
+      onSubmit={(e) => e.preventDefault()}
+      className="form"
+    >
       {nameDirty && nameError && <div style={{color: 'red'}}>{nameError}</div>}
       <input
+        className="form__input"
         name="name"
         onBlur={blurHandler}
         value={name}
@@ -95,6 +117,7 @@ export const CommentForm: React.FC = () => {
       
       {emailDirty && emailError && <div style={{color: 'red'}}>{emailError}</div>}
       <input
+        className="form__input"
         name="email"
         onBlur={blurHandler}
         value={email}
@@ -106,16 +129,15 @@ export const CommentForm: React.FC = () => {
         
       {textDirty && textError && <div style={{color: 'red'}}>{textError}</div>}
       <textarea
+        className="form__input form__textarea"
         name="text"
         onBlur={blurHandler}
         value={text}
         onChange={textHandler}
-        cols={30}
-        rows={10}
         required 
       />
 
-      <button type="button" disabled={!formValid} onClick={addComment}>
+      <button type="button" disabled={!formValid} onClick={addComment} className="button">
         Add comment
       </button>
     </form>

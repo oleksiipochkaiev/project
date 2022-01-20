@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import TrashIcon from '../../images/Trash';
 import { IComment } from '../../interfaces/IComment';
 import { deleteComment } from '../../slices/commentsSlice/actionCreators';
+import './Comment.css'
 
 type Props = {
   comment: IComment
@@ -16,11 +17,13 @@ export const Comment: React.FC<Props> = ({ comment }) => {
   }
 
   return (
-    <div>
-      <span>{comment.name}</span>
-      <span>{comment.email}</span>
-      <p>{comment.body}</p>
-      {comment.isMine && <button type="button" onClick={removeComment}><TrashIcon /></button>}
+    <div className="comment">
+      <div className='comment__user'>
+        <span className="comment__name">{comment.name}</span>
+        <span className="comment__email">{comment.email}</span>
+      </div>
+      <p className="comment__body">{comment.body}</p>
+      {comment.isMine && <button type="button" onClick={removeComment} className="comment__delete"><TrashIcon /></button>}
     </div>
   )
 }

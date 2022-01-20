@@ -11,13 +11,14 @@ type Props = {
 
 export const PostItem: React.FC<Props | IPostWithUser> = ({ post, user }) => {
   return (
-    <div key={post.id} className="post__item">
-      <div>
-        <span>{user.name}</span>
-        <span>{user.email}</span>
+    <div key={post.id} className="postItem post--margin-bottom">
+      <div className="postItem__info">
+        <span className="postItem__name">{user.name}</span>
+        <span className="postItem__email">{user.email}</span>
       </div>
-      <h2 className="post__title">{post.title}</h2>
-      <p className="post__body">{post.body}</p>
+      <h2 className="postItem__title">{post.title}</h2>
+
+      <p className="postItem__body">{post.body}</p>
     </div>
   )
 }

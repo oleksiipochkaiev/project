@@ -3,11 +3,12 @@ import React from "react";
 function Logo() {
   return (
     <svg
+      className="logo__image"
       xmlns="http://www.w3.org/2000/svg"
       width="54"
       height="56"
       fill="none"
-      viewBox="0 0 54 56"
+      viewBox="0 -5 54 56"
     >
       <ellipse cx="24.038" cy="24" fill="#5D71DD" rx="24.038" ry="24"/>
       <g filter="url(#filter0_d_2_121)">

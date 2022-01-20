@@ -1,7 +1,52 @@
-.post__list {
+.post-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+  margin-bottom: 20px;
 
   list-style: none;
+}
+
+.post-list__options {
+  display: flex;
+  padding: 20px 10px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 16px;
+}
+
+.post-list__select {
+  margin-left: 10px;
+}
+
+.post-list__buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.post-list__button {
+  color: black;
+  float: left;
+  padding: 8px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.post-list__button:hover {
+  border: 1px solid black;
+}
+
+.post-list__button--active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+@media (max-width: 700px) {
+  .post-list {
+    grid-template-columns: 1fr;
+  }
 }
