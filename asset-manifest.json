@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.2d5e885e.css",
-    "main.js": "/static/js/main.433067b5.js",
-    "static/media/Banner.jpg": "/static/media/Banner.36a691efca45eb02ac13.jpg",
-    "static/media/FuturaPT-Book.ttf": "/static/media/FuturaPT-Book.16ebcf48c36cedf12d82.ttf",
-    "index.html": "/index.html",
-    "main.2d5e885e.css.map": "/static/css/main.2d5e885e.css.map",
-    "main.433067b5.js.map": "/static/js/main.433067b5.js.map"
+    "main.css": "./static/css/main.c7318f77.css",
+    "main.js": "./static/js/main.433067b5.js",
+    "static/media/Banner.jpg": "./static/media/Banner.36a691efca45eb02ac13.jpg",
+    "static/media/FuturaPT-Book.ttf": "./static/media/FuturaPT-Book.16ebcf48c36cedf12d82.ttf",
+    "index.html": "./index.html",
+    "main.c7318f77.css.map": "./static/css/main.c7318f77.css.map",
+    "main.433067b5.js.map": "./static/js/main.433067b5.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d5e885e.css",
+    "static/css/main.c7318f77.css",
     "static/js/main.433067b5.js"
   ]
 }
