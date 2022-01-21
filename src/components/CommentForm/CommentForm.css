@@ -9,7 +9,7 @@
   height: 150px;
   padding: 12px 20px;
   box-sizing: border-box;
-  border: 2px solid #939edf;
+  border: 2px solid #cad1f3;
   border-radius: 4px;
   background-color: #f8f8f8;
   resize: none;
@@ -20,7 +20,8 @@
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  border: 3px solid #939edf;
+  border: 3px solid #cad1f3;
+  border-radius: 20px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   outline: none;

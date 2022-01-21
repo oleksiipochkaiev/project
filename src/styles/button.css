@@ -13,3 +13,7 @@
   display: block;
   margin-left: auto;
 }
+
+.button:hover {
+  background-color: #4052ba;
+}
