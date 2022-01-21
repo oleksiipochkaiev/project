@@ -86,7 +86,7 @@ function PostList() {
           {
             selectedUser
               ? (
-                userPostsLoading
+                userPosts
                   && (
                   <button
                     className="post-list__button post-list__button--active"
