@@ -1,0 +1,11 @@
+.post {
+  max-width: 1124px;
+  margin: 0 auto 30px;
+  border-radius: 18px;
+  padding: 10px;
+}
+
+.post__form-wrapper {
+  padding: 10px;
+  margin-bottom: 20px;
+}

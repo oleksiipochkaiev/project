@@ -1,26 +1,15 @@
-import React, { Children } from 'react';
-import Logo from '../images/Logo';
+import React from 'react';
+import Footer from '../components/Footer/Footer';
+import Header from '../components/Header/Header';
 import './Layout.css';
 
-function Layout({children}: any) {
+export function Layout({ children }: any) {
   return (
-    <>
-      <header className="header">
-        <a href="/">
-          <Logo />
-        </a>
-      </header>
-
+    <div className="layout">
+      <Header />
+      <div className="banner" />
       {children}
-      
-      <footer className="footer">
-        <a href="/">
-          <Logo />
-        </a>
-        <p>&copy;Warner Developers Programs 2022. All right reserved</p>
-      </footer>
-    </>
-  )
+      <Footer />
+    </div>
+  );
 }
-
-export default Layout;

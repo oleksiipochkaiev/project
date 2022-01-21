@@ -1,0 +1,9 @@
+.header {
+  padding: 5px 10px;
+  background-color: #fff;
+}
+
+.header__container {
+  max-width: 1124px;
+  margin: 0 auto;
+}

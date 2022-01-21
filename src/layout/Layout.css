@@ -1,3 +1,12 @@
-.header {
-  background-color: black;
+.layout {
+  min-height: 100vh;
+}
+
+.banner {
+  height: 300px;
+  margin-bottom: 20px;
+  background-image: url(../images/Banner.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

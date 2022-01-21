@@ -1,15 +1,16 @@
-import React from "react";
+import React from 'react';
 
 function Logo() {
   return (
     <svg
+      className="logo__image"
       xmlns="http://www.w3.org/2000/svg"
       width="54"
       height="56"
       fill="none"
-      viewBox="0 0 54 56"
+      viewBox="0 -5 54 56"
     >
-      <ellipse cx="24.038" cy="24" fill="#5D71DD" rx="24.038" ry="24"/>
+      <ellipse cx="24.038" cy="24" fill="#5D71DD" rx="24.038" ry="24" />
       <g filter="url(#filter0_d_2_121)">
         <ellipse
           cx="37.019"
@@ -29,15 +30,15 @@ function Logo() {
           colorInterpolationFilters="sRGB"
           filterUnits="userSpaceOnUse"
         >
-          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             result="hardAlpha"
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
           />
-          <feOffset dy="4"/>
-          <feGaussianBlur stdDeviation="2"/>
-          <feColorMatrix values="0 0 0 0 0.224444 0 0 0 0 0.272708 0 0 0 0 0.533333 0 0 0 0.18 0"/>
+          <feOffset dy="4" />
+          <feGaussianBlur stdDeviation="2" />
+          <feColorMatrix values="0 0 0 0 0.224444 0 0 0 0 0.272708 0 0 0 0 0.533333 0 0 0 0.18 0" />
           <feBlend
             in2="BackgroundImageFix"
             result="effect1_dropShadow_2_121"
