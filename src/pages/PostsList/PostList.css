@@ -26,6 +26,7 @@
 }
 
 .post-list__button {
+  box-sizing: border-box;
   color: black;
   float: left;
   padding: 8px 10px;

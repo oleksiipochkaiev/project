@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../../images/Logo';
 import './Header.css';
 
@@ -8,9 +9,9 @@ function Header() {
   return (
     <header className="header ">
       <div className="header__container">
-        <a href="/">
+        <Link to="/project">
           <Logo />
-        </a>
+        </Link>
       </div>
     </header>
   );

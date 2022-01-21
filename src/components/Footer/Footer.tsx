@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../../images/Logo';
 import './Footer.css';
 
 function Footer() {
   return (
     <footer className="footer">
-      <a href="/" className="logo footer__logo">
+      <Link to="/posts" className="logo footer__logo">
         <Logo />
-      </a>
+      </Link>
       <p className="footer__text">&copy;Warner Developers Programs 2022. All right reserved</p>
     </footer>
   );
