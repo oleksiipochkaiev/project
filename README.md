@@ -1,4 +1,4 @@
-[DEMO]  https://oleksiy-pochkayev.github.io/project/#/posts
+[DEMO]  https://oleksiy-pochkayev.github.io/project
 
 # Задача:
 - отобразить список постов.
