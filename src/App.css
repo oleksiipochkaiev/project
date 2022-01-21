@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Futura";
+  src: url("/src/fonts/FuturaPT-Book.ttf") format("truetype");
+}
+
+html {
+  font-family: Futura, sans-serif;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -10,4 +19,8 @@ ul,
 p {
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: #E5E5E5;
 }

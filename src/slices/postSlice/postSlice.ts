@@ -1,6 +1,5 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IPost } from "../../interfaces/IPost";
-import { IPostWithUser } from "../../interfaces/IPostWithUser";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { IPostWithUser } from '../../interfaces/IPostWithUser';
 
 interface PostState {
   post: IPostWithUser | null;
@@ -12,7 +11,7 @@ const initialState: PostState = {
   post: null,
   isLoading: false,
   error: '',
-}
+};
 
 export const postSlice = createSlice({
   name: 'post',
@@ -28,11 +27,11 @@ export const postSlice = createSlice({
       state.post = action.payload;
     },
 
-    postFetchingError(state,action: PayloadAction<string>) {
+    postFetchingError(state, action: PayloadAction<string>) {
       state.isLoading = false;
-      state.error = action.payload
+      state.error = action.payload;
     },
-  }
-})
+  },
+});
 
 export default postSlice.reducer;

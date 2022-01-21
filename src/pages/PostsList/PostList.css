@@ -11,8 +11,8 @@
   display: flex;
   padding: 20px 10px;
   margin-bottom: 20px;
-  border: 1px solid black;
   border-radius: 16px;
+  background: #fff;
 }
 
 .post-list__select {
@@ -40,7 +40,7 @@
 }
 
 .post-list__button--active {
-  background-color: #4CAF50;
+  background-color: #5D71DD;
   color: white;
   border-radius: 5px;
 }

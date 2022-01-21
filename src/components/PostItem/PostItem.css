@@ -1,23 +1,40 @@
-.postItem {
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 16px;
+.post-item {
+  padding: 16px;
+  background: #FFFFFF;
+  border-radius: 20px;
   min-height: 200px;
   height: 100%;
-  color: black;
 }
 
-.postItem__info {
+.post-item:hover {
+  box-shadow: 4px 8px 40px rgba(8, 24, 111, 0.2);
+}
+
+.post-item__info {
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
   font-size: 14px;
+  padding: 8px 16px;
+  width: fit-content;
+  
+  background: rgba(93, 113, 221, 0.05);
+  border-radius: 8px;
+  color: rgba(93, 113, 221, 1);
 }
 
-.postItem__name {
+.post-item__name {
   margin-bottom: 4px;
 }
 
-.postItem__title {
+.post-item__title {
   margin-bottom: 16px;
+  font-size: 24px;
+  line-height: 31px;
+
+  color: #2F2222;
+}
+
+.post-item__body {
+  color: rgba(47, 34, 34, 0.4);
 }

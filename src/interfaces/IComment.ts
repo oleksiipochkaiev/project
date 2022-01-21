@@ -5,4 +5,5 @@ export interface IComment {
   email: string;
   body: string;
   isMine?: boolean;
+  isNew?: boolean;
 }

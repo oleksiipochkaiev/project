@@ -1,6 +1,7 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+import React from 'react';
 
-function TrashIcon({width = 14, height = 16, color = "#000"}) {
+function TrashIcon({ width = 14, height = 16, color = '#000' }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

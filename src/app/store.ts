@@ -1,4 +1,8 @@
-import { configureStore, ThunkAction, Action, getDefaultMiddleware, combineReducers } from '@reduxjs/toolkit';
+import {
+  configureStore,
+  ThunkAction,
+  Action,
+} from '@reduxjs/toolkit';
 import { postsApi } from '../api/postsApi';
 import { usersApi } from '../api/usersApi';
 import postReducer from '../slices/postSlice/postSlice';
@@ -11,7 +15,8 @@ export const store = configureStore({
     postReducer,
     commentsReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(postsApi.middleware).concat(usersApi.middleware),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware()
+    .concat(postsApi.middleware).concat(usersApi.middleware),
 });
 
 export type AppDispatch = typeof store.dispatch;
