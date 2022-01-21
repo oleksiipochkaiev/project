@@ -22,7 +22,7 @@ const Comment: React.FC<Props> = ({ comment }) => {
   return (
     <div className={classNames('comment', { comment__new: comment.isNew })}>
       <div className="comment__user">
-        <span className="comment__name">{comment.name}</span>
+        <span className="comment__name">{capitalize(comment.name)}</span>
         <span className="comment__email">{comment.email}</span>
       </div>
       <p className="comment__body">{capitalize(comment.body)}</p>
