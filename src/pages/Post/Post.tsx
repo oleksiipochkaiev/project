@@ -29,6 +29,7 @@ function Post() {
   } = useAppSelector((state) => state.commentsReducer);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     dispatch(fetchPost(id!));
     dispatch(fetchComments(id!));
   }, []);
