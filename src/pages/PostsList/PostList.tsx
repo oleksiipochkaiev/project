@@ -14,6 +14,7 @@ function PostList() {
   const [page, setPage] = useState<number>(1);
   const [selectedUser, setSelectedUser] = useState<number>(0);
   const { data: posts, isLoading, isError } = useGetAllPostsQuery({ page, selectedUser });
+  const { data: users } = useGetAllUsersQuery('');
 
   const pages: number[] = [];
 
@@ -29,8 +30,6 @@ function PostList() {
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
-
-  const { data: users } = useGetAllUsersQuery('');
 
   const selectHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
     window.scroll(0, 0);

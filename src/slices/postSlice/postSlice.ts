@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IPostWithUser } from '../../interfaces/IPostWithUser';
+import { IPost } from '../../interfaces/IPost';
 
 interface PostState {
-  post: IPostWithUser | null;
+  post: IPost | null;
   isLoading: boolean;
   error: string;
 }
@@ -21,7 +21,7 @@ export const postSlice = createSlice({
       state.isLoading = true;
     },
 
-    postFetchingSucces(state, action: PayloadAction<IPostWithUser>) {
+    postFetchingSucces(state, action: PayloadAction<IPost>) {
       state.isLoading = false;
       state.error = '';
       state.post = action.payload;

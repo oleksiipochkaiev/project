@@ -1,6 +1,5 @@
 import React from 'react';
 import { IPost } from '../../interfaces/IPost';
-import { IPostWithUser } from '../../interfaces/IPostWithUser';
 import { IUser } from '../../interfaces/IUser';
 import capitalize from '../../tools/capitalizeFirstLatter';
 import './PostItem.css';
@@ -10,7 +9,7 @@ type Props = {
   user: IUser;
 }
 
-export const PostItem: React.FC<Props | IPostWithUser> = ({ post, user }) => (
+export const PostItem: React.FC<Props> = ({ post, user }) => (
   <div key={post.id} className="post-item post--margin-bottom">
     <div className="post-item__info">
       <span className="post-item__name">{user.name}</span>

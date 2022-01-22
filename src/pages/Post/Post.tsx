@@ -3,7 +3,6 @@ import { useParams } from 'react-router';
 import { TailSpin } from 'react-loader-spinner';
 import { PostItem } from '../../components/PostItem/PostItem';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { fetchComments } from '../../slices/commentsSlice/actionCreators';
 import fetchPost from '../../slices/postSlice/actionCreators';
 import Comment from '../../components/Comment/Comment';
 import { CommentForm } from '../../components/CommentForm/CommentForm';
@@ -11,6 +10,9 @@ import { Layout } from '../../layout/Layout';
 import '../../styles/container.css';
 import './Post.css';
 import '../../styles/button.css';
+import { useGetAllUsersQuery } from '../../api/usersApi';
+import { IUser } from '../../interfaces/IUser';
+import { fetchComments } from '../../slices/commentsSlice/actionCreators';
 
 function Post() {
   const [formVisible, setFormVisible] = useState<boolean>(false);
@@ -27,6 +29,14 @@ function Post() {
     isLoading: commentsLoading,
     error: commentsError,
   } = useAppSelector((state) => state.commentsReducer);
+
+  const { data: users } = useGetAllUsersQuery('');
+
+  let user: IUser | undefined;
+
+  if (post && users) {
+    user = users!.find((person) => person.id === post.userId);
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -51,7 +61,10 @@ function Post() {
               </div>
             )}
 
-          {post && <PostItem post={post.post} user={post.user} />}
+          {post && users
+            && (
+              <PostItem post={post} user={user!} />
+            )}
         </div>
 
         <div className="post__form-wrapper">
