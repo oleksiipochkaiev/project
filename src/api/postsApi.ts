@@ -19,17 +19,7 @@ export const postsApi = createApi({
         return { apiResponse, totalCount: Number(meta!.response!.headers.get('X-Total-Count')) };
       },
     }),
-    // ?_page=1&userId=4
-    getUserPosts: builder.query<IPost[], any>({
-      query: ({ page, selectedUser: userId }) => ({
-        url: `/posts?userId=${userId}`,
-        params: {
-          _limit: 10,
-          _page: page,
-        },
-      }),
-    }),
   }),
 });
 
-export const { useGetAllPostsQuery, useGetUserPostsQuery } = postsApi;
+export const { useGetAllPostsQuery } = postsApi;
