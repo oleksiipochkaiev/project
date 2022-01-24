@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router';
 import { TailSpin } from 'react-loader-spinner';
 import { PostItem } from '../../components/PostItem/PostItem';
@@ -7,12 +7,12 @@ import fetchPost from '../../slices/postSlice/actionCreators';
 import Comment from '../../components/Comment/Comment';
 import { CommentForm } from '../../components/CommentForm/CommentForm';
 import { Layout } from '../../layout/Layout';
-import '../../styles/container.css';
-import './Post.css';
-import '../../styles/button.css';
 import { useGetAllUsersQuery } from '../../api/usersApi';
 import { IUser } from '../../interfaces/IUser';
 import { fetchComments } from '../../slices/commentsSlice/actionCreators';
+import '../../styles/container.css';
+import './Post.css';
+import '../../styles/button.css';
 
 function Post() {
   const [formVisible, setFormVisible] = useState<boolean>(false);
@@ -32,8 +32,6 @@ function Post() {
 
   const { data: users } = useGetAllUsersQuery('');
 
-  let user: IUser | undefined;
-
   useEffect(() => {
     window.scrollTo(0, 0);
     if (id) {
@@ -42,9 +40,13 @@ function Post() {
     }
   }, []);
 
-  if (post && users) {
-    user = users.find((person) => person.id === post.userId);
-  }
+  const user: IUser | undefined = useMemo(() => {
+    if (post && users) {
+      return users.find((person) => person.id === post.userId);
+    }
+
+    return undefined;
+  }, [post, users]);
 
   if (postError) {
     return (
@@ -63,9 +65,9 @@ function Post() {
               </div>
             )}
 
-          {post && users
+          {post && users && user
             && (
-              <PostItem post={post} user={user!} />
+              <PostItem post={post} user={user} />
             )}
         </div>
 
