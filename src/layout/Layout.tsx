@@ -6,10 +6,14 @@ import './Layout.css';
 export function Layout({ children }: any) {
   return (
     <div className="layout">
-      <Header />
-      <div className="banner" />
-      {children}
-      <Footer />
+      <div className="content">
+        <Header />
+        <div className="banner" />
+        {children}
+      </div>
+      <div className="footer">
+        <Footer />
+      </div>
     </div>
   );
 }
