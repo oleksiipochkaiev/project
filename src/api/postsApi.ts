@@ -16,7 +16,7 @@ export const postsApi = createApi({
           : `/posts?_page=${page}`
       ),
       transformResponse(apiResponse: IPost[], meta) {
-        return { apiResponse, totalCount: Number(meta!.response!.headers.get('X-Total-Count')) };
+        return { apiResponse, totalCount: Number(meta?.response?.headers.get('X-Total-Count')) };
       },
     }),
   }),

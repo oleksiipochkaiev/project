@@ -11,9 +11,7 @@ export function Layout({ children }: any) {
         <div className="banner" />
         {children}
       </div>
-      <div className="footer">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }

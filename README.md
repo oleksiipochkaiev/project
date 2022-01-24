@@ -1,1 +1,1 @@
-[DEMO]  https://oleksiy-pochkayev.github.io/project
+[DEMO]  https://oleksiy-pochkayev.github.io/project/

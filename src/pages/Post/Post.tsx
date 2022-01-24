@@ -34,15 +34,17 @@ function Post() {
 
   let user: IUser | undefined;
 
-  if (post && users) {
-    user = users!.find((person) => person.id === post.userId);
-  }
-
   useEffect(() => {
     window.scrollTo(0, 0);
-    dispatch(fetchPost(id!));
-    dispatch(fetchComments(id!));
+    if (id) {
+      dispatch(fetchPost(id));
+      dispatch(fetchComments(id));
+    }
   }, []);
+
+  if (post && users) {
+    user = users.find((person) => person.id === post.userId);
+  }
 
   if (postError) {
     return (

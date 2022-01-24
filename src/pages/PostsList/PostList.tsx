@@ -69,7 +69,7 @@ function PostList() {
         <ul className="post-list">
           {
             posts && users && posts.apiResponse.map((post) => {
-              const user = users!.find((person) => person.id === post.userId);
+              const user = users.find((person) => person.id === post.userId);
 
               return (
                 <Link key={post.id} style={{ textDecoration: 'none' }} to={String(post.id)}>
