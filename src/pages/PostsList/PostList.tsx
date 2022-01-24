@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { TailSpin } from 'react-loader-spinner';
@@ -16,16 +16,22 @@ function PostList() {
   const { data: posts, isLoading, isError } = useGetAllPostsQuery({ page, selectedUser });
   const { data: users } = useGetAllUsersQuery('');
 
-  const pages: number[] = [];
-
-  let pagesCount;
-
-  if (posts) {
-    pagesCount = Math.floor(posts.totalCount / 10);
-    for (let i = 1; i <= pagesCount; i += 1) {
-      pages.push(i);
+  const pagesCount = useMemo(() => {
+    if (posts) {
+      return Math.floor(posts.totalCount / 10);
     }
-  }
+
+    return 1;
+  }, [selectedUser, posts]);
+
+  const pages = useMemo(() => {
+    const res = [];
+    for (let i = 1; i <= pagesCount; i += 1) {
+      res.push(i);
+    }
+
+    return res;
+  }, [pagesCount]);
 
   useEffect(() => {
     window.scroll(0, 0);
