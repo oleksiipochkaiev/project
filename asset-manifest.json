@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "./static/css/main.9203cd9b.css",
-    "main.js": "./static/js/main.9190fe03.js",
+    "main.js": "./static/js/main.59954559.js",
     "static/media/Banner.jpg": "./static/media/Banner.36a691efca45eb02ac13.jpg",
     "static/media/FuturaPT-Book.ttf": "./static/media/FuturaPT-Book.16ebcf48c36cedf12d82.ttf",
     "index.html": "./index.html",
     "main.9203cd9b.css.map": "./static/css/main.9203cd9b.css.map",
-    "main.9190fe03.js.map": "./static/js/main.9190fe03.js.map"
+    "main.59954559.js.map": "./static/js/main.59954559.js.map"
   },
   "entrypoints": [
     "static/css/main.9203cd9b.css",
-    "static/js/main.9190fe03.js"
+    "static/js/main.59954559.js"
   ]
 }
